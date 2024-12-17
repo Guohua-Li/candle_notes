@@ -1,3 +1,4 @@
+// https://www.tensorscience.com/posts/a-short-step-by-step-intro-to-machine-learning-in-rust-2024.html
 // Adopted from: https://rust.marcoinacio.com/data/candle/
 
 use candle_core::{
@@ -83,10 +84,10 @@ fn main() -> Result<()> {
         DType::F32,
         &dev
     );
-    println!("all_vars (before nn creation)\n{:?}", varmap.all_vars());
+    //println!("all_vars (before nn creation)\n{:?}", varmap.all_vars());
 
     let dnn: DenseNet = DenseNet::new(vb)?; // vb: VarBuilderArgs<'_, Box<dyn SimpleBackend>>
-    println!("all_vars (after nn creation)\n{:?}", varmap.all_vars());
+    //println!("all_vars (after nn creation)\n{:?}", varmap.all_vars());
 
     let mut opt: AdamW = AdamW::new(
         varmap.all_vars(),
@@ -121,23 +122,3 @@ fn main() -> Result<()> {
     println!("Losses on validation set:\n{:?}", val_losses);
     Ok(())
 }
-
-
-/*
-fn print_type_of<T>(_: &T) { 
-    println!("{}", std::any::type_name::<T>())
-}
-
-
-
-
-A VarMap is a storage container for named variables. Variables can be retrieved from the store, and new variables can be added with initialization configuration if they are missing. VarMap structures can be serialized in the SafeTensors format.
-
-The "VarBuilderArgs" structure is used to retrieve variables, which can be sourced from storage or generated through initialization. The method for retrieving variables is defined in the backend embedded in the `VarBuilder`.
-
-At a high level, a VarBuilder manages the parameters of a model. It can retrieve variables from a pre-trained checkpoint using "VarBuilder::from_mmaped_safetensors" or initialize them for training with "VarBuilder::from_varmap". In this sense, it is similar to how PyTorch automatically tracks parameters. At a lower level, the VarBuilder holds all the Tensors accessed using .get_with_hints. You can navigate ("cd") by changing the prefix of the VarBuilder using .pp.
-
-*/
-// https://www.tensorscience.com/posts/a-short-step-by-step-intro-to-machine-learning-in-rust-2024.html
-
-

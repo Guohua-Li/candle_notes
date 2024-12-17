@@ -1,0 +1,82 @@
+[package]
+name = "rust_ai_notes"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "create_tensors"
+path = "src/create_tensors.rs"
+
+[[bin]]
+name = "tensor_matmul"
+path = "src/tensor_matmul.rs"
+
+[[bin]]
+name = "tensor_broadcasting"
+path = "src/tensor_broadcasting.rs"
+
+[[bin]]
+name = "linear_demo1"
+path = "src/linear_demo1.rs"
+
+[[bin]]
+name = "linear_demo2"
+path = "src/linear_demo2.rs"
+
+[[bin]]
+name = "dnn_demo1"
+path = "src/dnn_demo1.rs"
+
+[[bin]]
+name = "dnn_demo2"
+path = "src/dnn_demo2.rs"
+
+[[bin]]
+name = "dnn_demo3"
+path = "src/dnn_demo3.rs"
+
+[[bin]]
+name = "dnn_demo4"
+path = "src/dnn_demo4.rs"
+
+
+[[bin]]
+name = "linfa-demo"
+path = "src/linfa-demo.rs"
+
+
+[[bin]]
+name = "dataset"
+path = "src/dataset.rs"
+
+[[bin]]
+name = "plot_data"
+path = "src/plot_data.rs"
+
+[dependencies]
+candle-core = "0.8.1"
+candle-nn = "0.8.1"
+tqdm = "0.7.0"
+
+plotly = "0.10.0"
+rand = "0.8.5"
+rand_distr = "0.4.3"
+linfa = "0.7.0"
+linfa-linear = "0.7.0"
+#linfa-datasets = "0.7.0"
+linfa-datasets = { version = "0.7.0", features = ["diabetes", "generate",] }
+
+#linfa-datasets = { version = "0.7.0", path = "../../datasets", features = [ "generate",] }
+
+linregress = "0.5.4"
+ndarray = "0.16.1"
+linfa-clustering = "0.7.0"
+ndarray-npy = "0.9.1"
+ndarray-rand = "0.15.0"
+rand_xoshiro = "0.6.0"
+#serde = "1.0.215"
+#serde_json = "1.0.133"
+#hf-hub = "0.3.2"
+#candle-datasets = "0.8.0"
+#anyhow = "1.0.93"
+

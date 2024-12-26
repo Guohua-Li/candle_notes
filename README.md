@@ -1,1 +1,1 @@
-Just a learning notes from a old grandpa.
+Just a learning notes from an old grandpa.

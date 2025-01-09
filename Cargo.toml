@@ -44,9 +44,9 @@ name = "mnist_mlp"
 path = "src/mnist_mlp.rs"
 
 [dependencies]
-candle-core = "0.8.1"
-candle-nn = "0.8.1"
-candle-datasets = "0.8.1"
+candle-core = "0.8.2"
+candle-nn = "0.8.2"
+candle-datasets = "0.8.2"
 tqdm = "0.7.0"
 anyhow = "1.0.93"
 serde = "1.0.215"
